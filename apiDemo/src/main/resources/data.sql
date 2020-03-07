@@ -1,11 +1,15 @@
-INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email) VALUES('Pedro Paulo', '36535722074', '1987-05-07 18:00:00','995566887','pedropaulo@gmail.com');
-INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email) VALUES('Joao Mateus', '57380903063', '1995-08-05 18:00:00','994123658', 'joaomateus@gmail.com');
-INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email) VALUES('Lucas Simao', '31644432005', '1989-09-11 18:00:00', '988547485', 'lucasimao@outlook.com');
-INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email) VALUES('Daniel Matias', '18445798081', '1991-11-14 18:00:00', '996568889', 'danielmatias@yahoo.com.br');
+INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Pedro Paulo', '36535722074', '1987-05-07','995566887','pedropaulo@gmail.com', 'ATIVO');
+INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Joao Mateus', '57380903063', '1995-08-05','994123658', 'joaomateus@gmail.com', 'ATIVO');
+INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Lucas Simao', '31644432005', '1989-09-11', '988547485', 'lucasimao@outlook.com', 'INATIVO');
+INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Daniel Matias', '18445798081', '1991-11-14', '996568889', 'danielmatias@yahoo.com.br', 'INATIVO');
+INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Maria Ferreira', '99585266032', '1980-02-19', '996568889', 'mariaferreira@outlook.com', 'INATIVO');
+INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Francisca Maciel', '81589192001', '1981-03-30', '996568889', 'franciscamaciel@uol.com', 'ATIVO');
+INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Joaquina Fragoso', '07611205056', '1983-09-28', '996568889', 'joaquinafragoso@ig.com.br', 'ATIVO');
 
 
-INSERT INTO FUNCIONARIO(nome, telefone, email, cpf, dt_nascimento) VALUES('John Soares', '995568898', 'johnsoares@gmail.com', '', '1985-12-22 18:00:00');
-INSERT INTO FUNCIONARIO(nome, telefone, email, cpf, dt_nascimento) VALUES('Roberto Carneiro', '998874521', 'robertocarneiro@gmail.com','', '1988-03-22 18:00:00');
+
+INSERT INTO FUNCIONARIO(nome, telefone, email, cpf, dt_nascimento, status) VALUES('John Soares', '995568898', 'johnsoares@gmail.com', '', '1985-12-22 18:00:00', 'INATIVO');
+INSERT INTO FUNCIONARIO(nome, telefone, email, cpf, dt_nascimento, status) VALUES('Roberto Carneiro', '998874521', 'robertocarneiro@gmail.com','', '1988-03-22 18:00:00', 'INATIVO');
 
 
 INSERT INTO SERVICO(nome, descricao, valor, dt_cadastro) VALUES('Corte Padrão', 'Corte de cabelo padrão sem estilizações', 20.00, '2020-03-06 18:00:00');

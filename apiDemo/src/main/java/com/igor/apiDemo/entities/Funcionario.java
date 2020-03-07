@@ -9,17 +9,6 @@ import java.util.Date;
 @Entity
 public class Funcionario {
 
-    public Funcionario(String nome, String telefone, String email, String cpf, Date dt_Nascimento) {
-
-        if(nome == null){
-            throw new NullPointerException(MensagensDeErro.ERRO00001);
-        }
-        this.nome =  nome;
-        this.telefone = telefone;
-        this.email = email;
-        this.cpf = cpf;
-        this.dt_Nascimento = dt_Nascimento;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +18,8 @@ public class Funcionario {
     private String email;
     private String cpf;
     private Date dt_Nascimento;
+    @Enumerated(EnumType.STRING)
+    private Status status = Status.ATIVO;
 
     @Override
     public int hashCode() {
@@ -102,5 +93,13 @@ public class Funcionario {
 
     public void setDt_Nascimento(Date dt_Nascimento) {
         this.dt_Nascimento = dt_Nascimento;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

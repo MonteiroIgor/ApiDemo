@@ -1,21 +1,32 @@
 package com.igor.apiDemo.controller;
 
+import com.igor.apiDemo.controller.form.ClienteForm;
 import com.igor.apiDemo.dto.ClienteDto;
 import com.igor.apiDemo.entities.Cliente;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.igor.apiDemo.repository.ClienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
 
 @RestController
+@RequestMapping("/clientes")
 public class ClienteController {
 
-    @RequestMapping("/clientes")
+    @Autowired
+    private ClienteRepository clienteRepository;
+
+    @GetMapping
     public List<ClienteDto> lista(){
-        Cliente cliente = new Cliente("igor monteiro","08675504497", "1991/02/12", "995566887", "ele@gmail.com");
-        
-        return ClienteDto.converter(Arrays.asList(cliente));
+        List<Cliente> clientes = clienteRepository.findAll();
+        return ClienteDto.converter(clientes);
+    }
+
+    @PostMapping
+    public void cadastrar(@RequestBody ClienteForm clienteForm){
+        Cliente cliente = clienteForm.converter();
+        clienteRepository.save(cliente);
     }
 
 

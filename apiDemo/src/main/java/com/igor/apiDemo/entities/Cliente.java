@@ -1,18 +1,28 @@
 package com.igor.apiDemo.entities;
 
 
-import com.igor.apiDemo.common.MensagensDeErro;
-
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Cliente {
 
-    public Cliente(String nome, String cpf, String dt_Nascimento, String telefone, String email) {
 
-        if(nome == null){
-            throw new NullPointerException(MensagensDeErro.ERRO00001);
-        }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    private String cpf;
+    private Date dt_Nascimento;
+    private String telefone;
+    private String email;
+    @Enumerated(EnumType.STRING)
+    private Status status = Status.ATIVO;
+
+    public Cliente() {
+    }
+
+    public Cliente(String nome, String cpf, Date dt_Nascimento, String telefone, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.dt_Nascimento = dt_Nascimento;
@@ -20,14 +30,7 @@ public class Cliente {
         this.email = email;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nome;
-    private String cpf;
-    private String dt_Nascimento;
-    private String telefone;
-    private String email;
+
 
     @Override
     public int hashCode() {
@@ -79,11 +82,11 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public String getDt_Nascimento() {
+    public Date getDt_Nascimento() {
         return dt_Nascimento;
     }
 
-    public void setDt_Nascimento(String dt_Nascimento) {
+    public void setDt_Nascimento(Date dt_Nascimento) {
         this.dt_Nascimento = dt_Nascimento;
     }
 
@@ -101,5 +104,13 @@ public class Cliente {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

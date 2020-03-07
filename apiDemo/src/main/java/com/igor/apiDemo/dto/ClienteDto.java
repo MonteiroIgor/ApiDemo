@@ -11,12 +11,14 @@ public class ClienteDto {
     private String telefone;
     private String email;
     private Long id;
+    private String status;
 
     public ClienteDto(Cliente cliente) {
         this.nome = cliente.getNome();
         this.telefone = cliente.getTelefone();
         this.email = cliente.getEmail();
         this.id = cliente.getId();
+        this.status = String.valueOf(cliente.getStatus());
     }
 
     // TODO: Conversao da Lista de clientes para clientesDTO, para não necessitar usar um for usa-se a bliblioteca stream do java 8
@@ -39,5 +41,9 @@ public class ClienteDto {
 
     public Long getId() {
         return id;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }
