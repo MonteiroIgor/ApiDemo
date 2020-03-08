@@ -19,12 +19,18 @@ public class ErroDeValidationHandler {
     @Autowired
     private MessageSource messageSource;
 
+    /* METODO É CHAMADO QUANDO HOUVER EXCESSÃO NO CONTROLE, PASSANDO COMO PARAMETRO QUAL TIPO DE EXCESSÃO,
+    NESSE CASO EXCESSÃO DE FORMULÁRIO */
+
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public List<ErroFormDto> handle(MethodArgumentNotValidException exception){
+
         List<ErroFormDto> erroFormDto = new ArrayList<>();
 
+        // TODO: fieldErros: contém erros de formulários
         List<FieldError> fieldErrors = exception.getBindingResult().getFieldErrors();
+        // TODO: PARA CADA ERRO DEVE EXTRAIR:
         fieldErrors.forEach(e ->{
             String mensagem = messageSource.getMessage(e, LocaleContextHolder.getLocale());
             ErroFormDto erro = new ErroFormDto(e.getField(), mensagem);
