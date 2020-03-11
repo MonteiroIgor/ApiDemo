@@ -5,7 +5,11 @@ INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('D
 INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Maria Ferreira', '99585266032', '1980-02-19', '996568889', 'mariaferreira@outlook.com', 'INATIVO');
 INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Francisca Maciel', '81589192001', '1981-03-30', '996568889', 'franciscamaciel@uol.com', 'ATIVO');
 INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Joaquina Fragoso', '07611205056', '1983-09-28', '996568889', 'joaquinafragoso@ig.com.br', 'ATIVO');
-
+INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Jeremias Herculano', '32855559049', '1983-01-28', '987745684', 'jeremiasherculano@ig.com.br', 'ATIVO');
+INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Aristeu Malaquias', '26635230033', '1983-05-22', '965358545', 'aristeualaquias@bol.com.br', 'ATIVO');
+INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Jorisclene Melquisedex', '62516012055', '1983-04-11', '965325489', 'jorisclenemelquisedex@outlook.com.br', 'INATIVO');
+INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Jeancloud Wandame', '71596223081', '1983-06-20', '958745668', 'jeancloudwandame@gmail.com.br', 'INATIVO');
+INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('Arnaldo Schuazineguer', '67161060060', '1983-02-13', '875681568', 'arnaldoschuazineguer@ig.com.br', 'ATIVO');
 
 
 INSERT INTO FUNCIONARIO(nome, telefone, email, cpf, dt_nascimento, status) VALUES('John Soares', '995568898', 'johnsoares@gmail.com', '', '1985-12-22 18:00:00', 'INATIVO');
