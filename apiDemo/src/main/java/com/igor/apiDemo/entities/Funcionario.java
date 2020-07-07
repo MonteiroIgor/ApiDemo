@@ -21,6 +21,18 @@ public class Funcionario {
     @Enumerated(EnumType.STRING)
     private Status status = Status.ATIVO;
 
+    public Funcionario(){
+
+    }
+
+    public Funcionario(String nome, String telefone, String email, String cpf, Date dt_Nascimento) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email;
+        this.cpf = cpf;
+        this.dt_Nascimento = dt_Nascimento;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
