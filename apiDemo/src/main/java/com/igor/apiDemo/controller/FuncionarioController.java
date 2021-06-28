@@ -1,8 +1,12 @@
 package com.igor.apiDemo.controller;
 
+import com.igor.apiDemo.controller.form.AtualizaClienteForm;
+import com.igor.apiDemo.controller.form.AtualizaFuncionarioForm;
 import com.igor.apiDemo.controller.form.FuncionarioForm;
+import com.igor.apiDemo.dto.ClienteDto;
 import com.igor.apiDemo.dto.DetalhamentoFuncionarioDto;
 import com.igor.apiDemo.dto.FuncionarioDto;
+import com.igor.apiDemo.entities.Cliente;
 import com.igor.apiDemo.entities.Funcionario;
 import com.igor.apiDemo.repository.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +25,7 @@ import java.util.Optional;
 public class FuncionarioController {
 
     @Autowired
-    private FuncionarioRepository funcionarioRepository;
+    public FuncionarioRepository funcionarioRepository;
 
     @GetMapping
     public List<FuncionarioDto> lista(){
@@ -44,6 +48,29 @@ public class FuncionarioController {
         Optional<Funcionario> funcionario = funcionarioRepository.findById(id);
         if(funcionario.isPresent()){
             return ResponseEntity.ok(new DetalhamentoFuncionarioDto(funcionario.get()));
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/{id}")
+    @Transactional
+    public ResponseEntity<FuncionarioDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizaFuncionarioForm funcionarioForm){
+
+        Optional<Funcionario> funcionarioOptional = funcionarioRepository.findById(id);
+        if(funcionarioOptional.isPresent()){
+            Funcionario funcionario = funcionarioForm.atualizar(id, funcionarioRepository);
+            return ResponseEntity.ok(new FuncionarioDto(funcionario));
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity<?> remover(@PathVariable Long id) {
+        Optional<Funcionario> funcionarioOptional = funcionarioRepository.findById(id);
+        if (funcionarioOptional.isPresent()) {
+            funcionarioRepository.deleteById(id);
+            return ResponseEntity.ok().build();
         }
         return ResponseEntity.notFound().build();
     }

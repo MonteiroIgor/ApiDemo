@@ -14,6 +14,10 @@ INSERT INTO CLIENTE(nome, cpf, dt_nascimento, telefone, email, status) VALUES('A
 
 INSERT INTO FUNCIONARIO(nome, telefone, email, cpf, dt_nascimento, status) VALUES('John Soares', '995568898', 'johnsoares@gmail.com', '', '1985-12-22 18:00:00', 'INATIVO');
 INSERT INTO FUNCIONARIO(nome, telefone, email, cpf, dt_nascimento, status) VALUES('Roberto Carneiro', '998874521', 'robertocarneiro@gmail.com','', '1988-03-22 18:00:00', 'INATIVO');
+INSERT INTO FUNCIONARIO(nome, telefone, email, cpf, dt_nascimento, status) VALUES('Carlos Augusto', '996500585', 'carlosaugusto@gmail.com', '', '1999-05-05 18:00:00', 'INATIVO');
+INSERT INTO FUNCIONARIO(nome, telefone, email, cpf, dt_nascimento, status) VALUES('Francisco Pereira', '9988423251', 'franciscopereira@gmail.com','', '1970-10-12 18:00:00', 'ATIVO');
+INSERT INTO FUNCIONARIO(nome, telefone, email, cpf, dt_nascimento, status) VALUES('Pedro Marcio', '995523665', 'pedromarcio@gmail.com', '', '1985-11-30 18:00:00', 'ATIVO');
+INSERT INTO FUNCIONARIO(nome, telefone, email, cpf, dt_nascimento, status) VALUES('Morais Moreira', '998698523', 'moraismoreira@gmail.com','', '1995-07-13 18:00:00', 'ATIVO');
 
 
 INSERT INTO SERVICO(nome, descricao, valor, dt_cadastro) VALUES('Corte Padrão', 'Corte de cabelo padrão sem estilizações', 20.00, '2020-03-06 18:00:00');
