@@ -1,9 +1,12 @@
 package com.igor.apiDemo.controller;
 
+import com.igor.apiDemo.controller.form.AtualizaClienteForm;
 import com.igor.apiDemo.controller.form.AtualizaFuncionarioForm;
 import com.igor.apiDemo.controller.form.FuncionarioForm;
+import com.igor.apiDemo.dto.ClienteDto;
 import com.igor.apiDemo.dto.DetalhamentoFuncionarioDto;
 import com.igor.apiDemo.dto.FuncionarioDto;
+import com.igor.apiDemo.entities.Cliente;
 import com.igor.apiDemo.entities.Funcionario;
 import com.igor.apiDemo.repository.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;

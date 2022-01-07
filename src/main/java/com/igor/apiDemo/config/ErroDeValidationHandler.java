@@ -20,7 +20,7 @@ public class ErroDeValidationHandler {
     private MessageSource messageSource;
 
     /* METODO É CHAMADO QUANDO HOUVER EXCESSÃO NO CONTROLE, PASSANDO COMO PARAMETRO QUAL TIPO DE EXCESSÃO,
-    NESSE CASO, EXCESSÃO DE FORMULÁRIO */
+    NESSE CASO EXCESSÃO DE FORMULÁRIO */
 
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
