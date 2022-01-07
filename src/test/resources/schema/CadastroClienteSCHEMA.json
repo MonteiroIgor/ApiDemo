@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "minLength": 1
+    },
+    "telefone": {
+      "type": "string",
+      "minLength": 1
+    },
+    "email": {
+      "type": "string",
+      "minLength": 1
+    },
+    "id": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "nome",
+    "telefone",
+    "email",
+    "id"
+  ]
+}
